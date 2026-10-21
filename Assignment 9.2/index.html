@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Article Page</title>
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #263238;
+            background-color: #f4f7fb;
+        }
+
+        /* Navigation bar */
+        header {
+            background-color: #142d4e;
+            color: white;
+            padding: 1rem 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .logo {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Main content container */
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 2rem auto;
+        }
+
+        /* Article heading */
+        .article-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #142d4e;
+        }
+
+        .article-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #607080;
+        }
+
+        /* Responsive hero image */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        /* Article layout */
+        .article-content {
+            background-color: white;
+            padding: clamp(1rem, 4vw, 2.5rem);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: #142d4e;
+            margin: 1.5rem 0 0.7rem;
+        }
+
+        .article-content p {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            margin-bottom: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        /* Image gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #142d4e;
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .container {
+                width: 88%;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 900px) {
+            .container {
+                width: 85%;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .article-content {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 400px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">TechWorld</div>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Articles</a>
+                <a href="#">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="article-header">
+            <h1>Technology and the Future</h1>
+            <p>Discover how technology is changing the world around us.</p>
+        </section>
+
+        <article class="article-content">
+
+            <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
+                alt="People working together with computers">
+
+            <h2>Introduction</h2>
+            <p>
+                Technology has become an important part of our everyday lives.
+                From smartphones to artificial intelligence, digital tools help
+                us communicate, learn, and solve problems more efficiently.
+            </p>
+
+            <h2>How Technology Helps Us</h2>
+            <p>
+                Modern technology connects people across the world. Students
+                can attend online classes, businesses can work remotely, and
+                people can access information within seconds.
+            </p>
+
+            <div class="gallery">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"
+                    alt="Laptop being used for digital work">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=700&q=80"
+                    alt="Person working on a computer">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=700&q=80"
+                    alt="Modern technology and robotics">
+            </div>
+
+            <h2>The Importance of Responsive Design</h2>
+            <p>
+                A responsive webpage adjusts its layout, text, and images to
+                different screen sizes. This makes the website easier to read
+                on mobile phones, tablets, laptops, and desktop computers.
+            </p>
+
+            <h2>Conclusion</h2>
+            <p>
+                Responsive design creates a better experience for everyone.
+                By using flexible images, readable typography, and suitable
+                content widths, developers can build websites that work well
+                across different devices.
+            </p>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechWorld | Responsive Web Design Assignment</p>
+    </footer>
+
+</body>
+</html>
